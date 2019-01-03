@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "engines": {
-    "node": "7.7.x"
+    "node": "8.9.x"
   },
   "dependencies": {
     "babel-cli": "~6.24.1",

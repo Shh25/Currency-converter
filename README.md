@@ -4,16 +4,15 @@
 A currency converter built with **Express** and **MongoDB** and **Angular 5**.
 
 ## Installation
-Backend
+## Backend
 1. Install Node version (LTS 8.9.0 or above)
 2. Install dependencies using command
     `npm install`
+3. Change file name env to .env to enable usage of environment variables in the project.
+4. Run `npm start` for local production build. Open on `localhost:3001`
+Run `npm run start-dev` for development build
 
-3. Run `npm run start-dev` for development build
-
-- Run `npm run build` for local production build. Open on `localhost:3001`
-
-Frontend
+## Frontend
 1. Install angular cli
 2. Install dependencies using command
     `npm install`
