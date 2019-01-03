@@ -46,9 +46,20 @@ export class AppComponent {
   postLog() {
     console.log('data: ', this.conversionLog);    
     this.apiService.postConversionLog(this.conversionLog)
-    .subscribe(conversion => {
+    .subscribe((conversion) => {
       this.conversionResult = JSON.parse(JSON.stringify(conversion)).body
       console.log('Upload results: ', conversion);
+      if(conversion.errorCode) {
+        this.openSnackBar(conversion.message, 'FAILURE')
+      } else {
+        this.openSnackBar('Successfully Converted', 'SUCCESS')
+      }
     })
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 1500,
+    });
   }
 }

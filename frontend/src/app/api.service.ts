@@ -23,7 +23,7 @@ export class ApiService {
       }),
 			catchError(error => {
       console.log('Err: ', error)
-      return of(error.message)
+      return of(error)
     }))
   }
   getConversionLogs (queryParams): Observable<any> {
@@ -34,7 +34,7 @@ export class ApiService {
       }),
 			catchError(error => {
       console.log('Err: ', error)
-      return of(error.message)
+      return of(error)
     }))
   }
   
@@ -46,7 +46,7 @@ export class ApiService {
     }),
     catchError(error => {
       console.log('Error in logs: ', error)
-      return of(error.message)
+      return of({message: error.message, errorCode: 1})
     }))
 	}
 }

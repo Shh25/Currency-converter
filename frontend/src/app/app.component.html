@@ -18,7 +18,7 @@
         </mat-form-field>&nbsp;
     
         <mat-form-field class="">
-          <input matInput placeholder="Amount" [(ngModel)]=conversionLog.amount>
+          <input matInput placeholder="Amount" [(ngModel)]=conversionLog.amount required>
         </mat-form-field>&nbsp;
     
         <mat-form-field>
@@ -75,7 +75,47 @@
 
   <!-- TAB 3 -->
   <mat-tab label="Help">
-    
+      <h1>Currency Converter</h1>
+      <p>Please read READ.ME section of the project for installation and setting up the project.</p>
+      <h2>Backend</h2>
+      <p> 
+      1. Backend is developed in NodeJS, ExpressJS and MongoLab.  MongoLab database has been created using developer account and is configured to be modified later if required later. Thus, mongoDB installation is not required to run the program.<br><br>
+      2. Versions are mentioned in the READ.ME file along with the project.<br><br>
+      3. Environment variables are configured and added to a hidden .env file. This file is used on server directly and is not committed to a git repository. <br><br>
+      </p>
+      <h2>Frontend</h2>
+      <p> 
+      1. Frontend is developed in Angular 5 using Angular CLI and Angular Material.<br><br>
+      2. Since this project is not hosted over a server, the backend is configured to call localhost at the link: http://localhost:3001. Once the backend is hosted over a server, this local IP will be replaced by a proper IP address.<br><br>
+      <b>Input:</b><br><br>
+      1. Currency Input: Currently expects input to be in 4 given currencies that need to be selected from a drop-down menu.<br><br>
+      2. Amount Input: Amount entered will be considered in the denomination of the currency from which needs to be converted to the other currency. It is initialized to 0.<br><br>
+      <b>Output:</b><br><br>
+      1. Currency Output: Amount after conversion<br><br>
+      2. Current Rate of currency with respect to the currency that needs to be converted.<br><br>
+      3. Last rate of currency: This is the rate of currency on the day before.<br><br>
+      </p>
+      <h2>Assumptions</h2>
+      <p> 
+      1. Input Currency and Output currency is always going to vary. I.e. the same currency conversion is not expected.<br><br>
+      2. Last rate change data is assumed to be of the day before. <br><br>
+      3. Currency rate is calculated as per the current date, time and timezone.<br><br>
+      4. No option is provided to calculate currency change for any other date.<br><br>
+      5. There exists a ‘currency’ collection which maintains the number of currencies permitted. To add new currency to the converter, please contact administrator of the Mongo Database (contact: Shefali Agarwal).<br><br>
+      6. Historical data is sorted in descending order and is limited to the number of rows the user wants.<br><br>
+      7. There is no condition to find out the total number of historical transactions present in the database.<br><br>
+      8. I am using a free service https://free.currencyconverterapi.com to get currency rates. So far it has been reliable and has the ability to convert various currencies which are not a part of this system but can be added later. Please visit the site to get more details.<br><br>
+      </p>
+      <h2>Testing Scenarios</h2>
+      <p> 
+      1. Testing Conversion for getting the correct solution is checked against different currency and amount inputs.<br><br>
+      2. Validations (frontend): To ensure data is provided as expected. Frontend is given a default for currency type and required warning is set for amount.<br><br>
+      3. Validations (backend): To ensure proper data, mongoose validations have been added for amount and currency.<br><br>
+      4. For historical data, database is maintained and checked for proper saving and retrieval of inputs and outputs.<br><br>
+      </p>
+      
+      
+      
   </mat-tab>
 </mat-tab-group>
 
