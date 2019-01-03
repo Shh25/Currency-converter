@@ -48,7 +48,7 @@ app.get('/conversionLogs/', (req, res) => {
     console.log('Limit: ',req.query.limit);
     if (err) res.send(err)
     else res.json(conversionLog);
-  }).sort(-1).limit(parseInt(req.query.limit));
+  }).sort({ date: -1 }).limit(parseInt(req.query.limit));
 });
 app.post('/uploads/', (req, res) => {
   let currentDate = new Date().toJSON().split('T')[0];
