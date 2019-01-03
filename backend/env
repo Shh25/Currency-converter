@@ -1,5 +1,4 @@
 DB_USER=shefali
 DB_PASS=exchange123
-FIXER_API_KEY=2a26bfe4e4aa1c3c64c847693904c786
 EXCHANGE_BASE_URL=https://free.currencyconverterapi.com/api/v6/
 EXCHANGE_CONVERT_PARAMETER=convert
