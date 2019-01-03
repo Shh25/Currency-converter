@@ -26,5 +26,6 @@ Run `npm run start-dev` for development build
 Using https://free.currencyconverterapi.com to get currency rates
 
 ## Documentation
+Help tab-menu on Angular 5. If that does not work, please refer the following link:
 https://docs.google.com/document/d/1yu6su3UlFskbvyCcLfakdCLd3-IK17IPNpCvppiUgyQ/edit#
 
